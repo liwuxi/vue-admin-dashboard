@@ -2,6 +2,9 @@ import Vue from "vue";
 import Vuex from "vuex";
 
 Vue.use(Vuex);
+if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+  window.localStorage.setItem("isDarkMode", "true");
+}
 
 //Initial Stage
 const userSelectedDarkMode = window.localStorage.getItem("isDarkMode") === "true"

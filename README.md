@@ -1,3 +1,6 @@
 # vue-admin-dashboard
 
-Have Dark-model
+我的第一个 Vue App
+
+特征：
+* DarkMode
