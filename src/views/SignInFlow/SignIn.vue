@@ -3,10 +3,7 @@
     class="container"
     :class="{ 'light-background': !isDarkMode, 'dark-background': isDarkMode }"
   >
-    <div class="request" :class="{ 'light-request': isDarkMode, 'dark-request': !isDarkMode }">
-      Don't have a Design+Code HQ account?
-      <router-link to="/request">Request an account</router-link>
-    </div>
+    <RequestAccount/>
     <div class="login">
       <div class="logo">
         <img src="@/assets/DCHQ.svg" v-show="isDarkMode">
@@ -27,23 +24,26 @@
           to="/recover"
           :class="{ 'light-link': isDarkMode, 'dark-link': !isDarkMode }"
         >Forgot your passowrd?</router-link>
-        <button @click="toggleDarkMode">Toggle</button>
+        <ThemeSwitch/>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import "animate.css";
+import RequestAccount from "@/components/RequestAccount";
+import ThemeSwitch from "@/components/ThemeSwitch";
+
 export default {
   name: "SignIn",
+  components: {
+    RequestAccount,
+    ThemeSwitch
+  },
   computed: {
     isDarkMode() {
       return this.$store.getters.isDarkMode;
-    }
-  },
-  methods: {
-    toggleDarkMode() {
-      this.$store.commit("toggleDarkMode");
     }
   }
 };
@@ -89,26 +89,6 @@ export default {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-}
-
-.request {
-  position: absolute;
-  top: 40px;
-  right: 40px;
-}
-
-.light-request {
-  color: rgba(255, 255, 255, 0.3);
-  a {
-    color: $white;
-  }
-}
-
-.dark-request {
-  color: rgba(0, 0, 0, 0.3);
-  a {
-    color: $black;
-  }
 }
 
 .logo {
