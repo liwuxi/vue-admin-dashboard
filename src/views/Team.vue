@@ -80,7 +80,7 @@ export default {
 };
 </script>
 
-<style lang="scss"、>
+<style lang="scss">
 .container {
   margin-left: 25px;
 }
