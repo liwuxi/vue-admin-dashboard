@@ -59,8 +59,8 @@ Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
 @mixin medium-text-bold($color: $white) {
-    @extend %medium;
-    font-weight: bold;
-    color: $color;
-  }
+  @extend %medium;
+  font-weight: bold;
+  color: $color;
+}
   
